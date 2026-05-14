@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Zap, Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
+import { Logo } from "./Logo";
 
 export function Footer() {
   return (
@@ -9,12 +10,7 @@ export function Footer() {
           
           {/* Brand */}
           <div className="space-y-4">
-            <Link to="/" className="flex items-center gap-2 group">
-              <Zap className="h-8 w-8 text-accent1 group-hover:text-accent2 duration-300" />
-              <span className="font-serif text-2xl font-bold tracking-tight">
-                PLUG <span className="text-accent1">&</span> POWER
-              </span>
-            </Link>
+            <Logo invert={true} />
             <p className="text-slate-300 mt-4 leading-relaxed font-sans text-sm">
               Auckland's Most Trusted Sparkies. Safe, reliable, and Master Electricians certified for residential and commercial works.
             </p>
@@ -38,8 +34,7 @@ export function Footer() {
               <li><Link to="/" className="hover:text-accent2 transition-colors">Home</Link></li>
               <li><Link to="/about" className="hover:text-accent2 transition-colors">About Us</Link></li>
               <li><Link to="/services" className="hover:text-accent2 transition-colors">Our Services</Link></li>
-              <li><Link to="/testimonials" className="hover:text-accent2 transition-colors">Testimonials</Link></li>
-              <li><Link to="/contact" className="hover:text-accent2 transition-colors">Contact</Link></li>
+              <li><Link to="/contact" className="hover:text-accent2 transition-colors">Contact Us</Link></li>
             </ul>
           </div>
 

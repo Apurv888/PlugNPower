@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Zap } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/src/lib/utils";
+import { Logo } from "./Logo";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+
+  const isDarkHeroPage = location.pathname === "/" || location.pathname === "/services" || location.pathname === "/contact" || location.pathname === "/about";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,27 +22,23 @@ export function Navbar() {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
-    { name: "Testimonials", path: "/testimonials" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" },
+    { name: "About Us", path: "/about" },
+    { name: "Contact Us", path: "/contact" },
   ];
+
+  const hasTransparentNav = isDarkHeroPage && !isScrolled;
 
   return (
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled
+        !hasTransparentNav
           ? "bg-white text-slate-900 shadow-md py-3"
           : "bg-transparent text-white py-5"
       )}
     >
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <Zap className="h-8 w-8 text-accent1 group-hover:text-accent2 duration-300" />
-          <span className="font-serif text-xl sm:text-2xl font-bold tracking-tight">
-            PLUG <span className="text-accent1">&</span> POWER
-          </span>
-        </Link>
+        <Logo invert={hasTransparentNav} />
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-medium">
@@ -49,8 +48,8 @@ export function Navbar() {
               to={link.path}
               className={cn(
                 "hover:text-accent1 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-accent1 hover:after:w-full after:transition-all after:duration-300",
-                location.pathname === link.path && !isScrolled ? "text-accent2" : "",
-                location.pathname === link.path && isScrolled ? "text-primary" : ""
+                location.pathname === link.path && hasTransparentNav ? "text-accent2" : "",
+                location.pathname === link.path && !hasTransparentNav ? "text-primary" : ""
               )}
             >
               {link.name}

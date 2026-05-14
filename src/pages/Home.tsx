@@ -518,6 +518,76 @@ function CTASection() {
   );
 }
 
+function WorkProcess() {
+  const steps = [
+    { num: 1, title: "FREE QUOTE & ADVICE", desc: "We assess your needs and recommend the best solution." },
+    { num: 2, title: "SCHEDULE YOUR SERVICE", desc: "We book a time that suits you." },
+    { num: 3, title: "PROFESSIONAL INSTALLATION", desc: "Our licensed team gets the job done right." },
+    { num: 4, title: "ENJOY PEACE OF MIND", desc: "Quality workmanship and ongoing support you can rely on." },
+  ];
+
+  return (
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-sans text-accent1 font-bold tracking-widest uppercase text-sm mb-4 inline-block relative after:absolute after:-bottom-1 after:left-1/4 after:w-1/2 after:h-0.5 after:bg-accent1">Process</h2>
+            <h3 className="font-serif text-4xl md:text-5xl font-bold text-primary mb-6">
+              Our Simple 4 Step Process
+            </h3>
+            <p className="font-sans text-slate-600 text-lg">
+              We make electrical work easy, from your first call to project completion.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+          {/* Connecting line for desktop */}
+          <div className="hidden lg:block absolute top-12 left-[12%] right-[12%] h-1 bg-slate-100 -z-10">
+            <motion.div 
+              className="h-full bg-accent1"
+              initial={{ width: "0%" }}
+              whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
+            />
+          </div>
+
+          {steps.map((step, i) => (
+            <motion.div 
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.2, duration: 0.6 }}
+              className="relative text-center group"
+            >
+              <div className="w-24 h-24 mx-auto bg-white rounded-full border-4 border-slate-100 flex items-center justify-center font-serif text-4xl font-bold text-slate-300 relative z-10 group-hover:border-accent1 group-hover:text-primary transition-colors duration-300 shadow-sm bg-white">
+                <span className="absolute -top-3 -right-3 w-8 h-8 bg-accent1 rounded-full text-sm flex items-center justify-center text-primary border-2 border-white shadow-sm font-sans">
+                  {step.num}
+                </span>
+                {/* SVG Icons for each step could go here, fallback to number for now */}
+                {step.num === 1 && <svg className="w-10 h-10 group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>}
+                {step.num === 2 && <svg className="w-10 h-10 group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>}
+                {step.num === 3 && <svg className="w-10 h-10 group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg>}
+                {step.num === 4 && <svg className="w-10 h-10 group-hover:text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>}
+              </div>
+              <div className="mt-6">
+                <h4 className="font-sans font-bold text-primary mb-3 px-2 uppercase">{step.title}</h4>
+                <p className="font-sans text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function Home() {
   return (
     <>
@@ -525,6 +595,7 @@ export function Home() {
       <TrustBar />
       <About />
       <Services />
+      <WorkProcess />
       <WhyChooseUs />
       <Testimonials />
       <FAQ />
