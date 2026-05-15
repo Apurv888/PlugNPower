@@ -41,15 +41,14 @@ export function Navbar() {
         <Logo invert={hasTransparentNav} />
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-medium">
+        <nav className="hidden lg:flex items-center gap-6 xl:gap-8 font-medium">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               className={cn(
-                "hover:text-accent1 transition-colors relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-accent1 hover:after:w-full after:transition-all after:duration-300",
-                location.pathname === link.path && hasTransparentNav ? "text-accent2" : "",
-                location.pathname === link.path && !hasTransparentNav ? "text-primary" : ""
+                "hover:text-accent1 transition-colors relative after:absolute after:-bottom-1 after:left-0 after:h-[2px] after:w-0 after:bg-accent1 hover:after:w-full after:transition-all after:duration-300",
+                location.pathname === link.path ? "text-accent1 font-bold after:w-full" : ""
               )}
             >
               {link.name}
@@ -65,7 +64,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden p-2 text-current"
+          className="lg:hidden p-2 text-current"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -74,14 +73,14 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white text-slate-900 shadow-lg border-t border-slate-100 flex flex-col pt-2 pb-6 px-4 gap-4">
+        <div className="lg:hidden absolute top-full left-0 w-full bg-white text-slate-900 shadow-lg border-t border-slate-100 flex flex-col pt-2 pb-6 px-4 gap-4">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               to={link.path}
               className={cn(
                 "py-2 font-medium border-b border-slate-100",
-                location.pathname === link.path ? "text-primary font-bold" : ""
+                location.pathname === link.path ? "text-accent1 font-bold" : ""
               )}
               onClick={() => setMobileMenuOpen(false)}
             >

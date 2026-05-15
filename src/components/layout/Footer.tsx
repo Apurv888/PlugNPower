@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Zap, Phone, Mail, MapPin, Facebook, Instagram, Linkedin, Clock } from "lucide-react";
+import { Zap, Phone, Mail, MapPin, Facebook, Instagram, Clock } from "lucide-react";
 import { Logo } from "./Logo";
 
 export function Footer() {
@@ -20,9 +20,6 @@ export function Footer() {
               </a>
               <a href="#" className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent1 hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent1 hover:text-primary transition-colors">
-                <Linkedin className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -56,11 +53,14 @@ export function Footer() {
             <ul className="space-y-4 font-sans text-slate-300">
               <li className="flex items-start gap-3">
                 <Phone className="h-5 w-5 text-accent1 shrink-0 mt-0.5" />
-                <a href="tel:09-123-4567" className="hover:text-accent2 transition-colors">09-123-4567</a>
+                <div className="flex flex-col gap-1">
+                  <a href="tel:0226177220" className="hover:text-accent2 transition-colors">022 617 7220 (Ashish Patel)</a>
+                  <a href="tel:0226772115" className="hover:text-accent2 transition-colors">022 677 2115 (Ravi Patel)</a>
+                </div>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-accent1 shrink-0 mt-0.5" />
-                <a href="mailto:info@plugandpower.co.nz" className="hover:text-accent2 transition-colors">info@plugandpower.co.nz</a>
+                <a href="mailto:plugpowerservices@gmail.com" className="hover:text-accent2 transition-colors break-all">plugpowerservices@gmail.com</a>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent1 shrink-0 mt-0.5" />
@@ -75,12 +75,8 @@ export function Footer() {
 
         </div>
         
-        <div className="pt-8 border-t border-secondary text-center text-slate-400 font-sans text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="pt-8 border-t border-secondary text-center text-slate-400 font-sans text-sm flex flex-col md:flex-row justify-center items-center gap-4">
           <p>&copy; {new Date().getFullYear()} Plug & Power Electrical Ltd. All rights reserved.</p>
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-accent1 transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-accent1 transition-colors">Terms of Service</a>
-          </div>
         </div>
       </div>
     </footer>

@@ -5,32 +5,32 @@ import { Link } from "react-router-dom";
 export function About() {
   const values = [
     {
-      icon: <ShieldCheck className="w-10 h-10 text-primary" />,
+      icon: <ShieldCheck className="w-10 h-10" />,
       title: "Safety First",
       desc: "We strictly adhere to New Zealand electrical standards to ensure the highest safety for your home and business."
     },
     {
-      icon: <Users className="w-10 h-10 text-primary" />,
+      icon: <Users className="w-10 h-10" />,
       title: "Customer Focused",
       desc: "Your satisfaction is our priority. We communicate clearly, arrive on time, and respect your property."
     },
     {
-      icon: <Target className="w-10 h-10 text-primary" />,
+      icon: <Target className="w-10 h-10" />,
       title: "Quality Workmanship",
       desc: "From premium materials to precise installations, we never cut corners on the quality of our work."
     },
     {
-      icon: <Zap className="w-10 h-10 text-primary" />,
+      icon: <Zap className="w-10 h-10" />,
       title: "Innovation & Efficiency",
       desc: "We stay updated with the latest electrical technologies to provide energy-efficient and modern solutions."
     },
     {
-      icon: <BadgeDollarSign className="w-10 h-10 text-primary" />,
+      icon: <BadgeDollarSign className="w-10 h-10" />,
       title: "Affordable Rates",
       desc: "We offer competitive pricing and transparent quotes with no hidden fees for all our electrical services."
     },
     {
-      icon: <Clock className="w-10 h-10 text-primary" />,
+      icon: <Clock className="w-10 h-10" />,
       title: "24/7 Support",
       desc: "Electrical emergencies can happen anytime. Our team is available around the clock to assist you when you need it most."
     }
@@ -150,15 +150,26 @@ export function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                className="bg-slate-50 rounded-2xl p-8 hover:shadow-xl transition-all hover:-translate-y-1 border border-slate-100 group"
+                whileHover={{ y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)" }}
+                className="bg-slate-50 hover:bg-white relative overflow-hidden rounded-2xl p-8 border border-slate-200 hover:border-transparent group z-0 transition-all duration-300"
               >
-                <div className="bg-white w-16 h-16 rounded-2xl shadow-sm flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                  {value.icon}
+                {/* Background Shapes */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent1/5 rounded-bl-full -z-10 group-hover:scale-[2] transition-transform duration-700 ease-in-out"></div>
+                <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent2/5 rounded-tr-full -z-10 group-hover:scale-[2] transition-transform duration-700 ease-in-out"></div>
+                
+                <div className="bg-white w-20 h-20 rounded-2xl shadow-sm border border-slate-100 flex items-center justify-center mb-8 group-hover:bg-accent1 group-hover:border-accent1 transition-colors duration-500 relative overflow-hidden">
+                  <div className="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
+                  <div className="text-primary group-hover:text-white transition-colors duration-500">
+                    {value.icon}
+                  </div>
                 </div>
-                <h4 className="font-serif font-bold text-xl text-primary mb-3">{value.title}</h4>
-                <p className="font-sans text-slate-600 leading-relaxed">
+                <h4 className="font-serif font-bold text-2xl text-primary mb-3 group-hover:text-accent1 transition-colors duration-300">{value.title}</h4>
+                <p className="font-sans text-slate-600 leading-relaxed group-hover:text-slate-800 transition-colors duration-300">
                   {value.desc}
                 </p>
+                
+                {/* Decorative bottom line animation */}
+                <div className="absolute bottom-0 left-0 h-1.5 w-0 bg-gradient-to-r from-accent1 to-accent2 group-hover:w-full transition-all duration-500 ease-out"></div>
               </motion.div>
             ))}
           </div>
