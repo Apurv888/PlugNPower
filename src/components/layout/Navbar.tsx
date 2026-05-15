@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import { cn } from "@/src/lib/utils";
 import { Logo } from "./Logo";
 
@@ -64,38 +64,82 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden p-2 text-current"
+          className="lg:hidden p-2 relative w-10 h-10 flex items-center justify-center focus:outline-none text-current"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle mobile menu"
         >
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <div className="w-6 h-5 flex flex-col justify-center relative">
+            <span
+              className={cn(
+                "bg-current h-[2px] rounded-full transition-all duration-300 ease-out absolute inset-x-0",
+                mobileMenuOpen ? "w-6 rotate-45" : "w-6 -translate-y-2"
+              )}
+            ></span>
+            <span
+              className={cn(
+                "bg-current h-[2px] rounded-full transition-all duration-300 ease-out absolute inset-x-0 right-0 ml-auto",
+                mobileMenuOpen ? "w-0 opacity-0" : "w-4 opacity-100"
+              )}
+            ></span>
+            <span
+              className={cn(
+                "bg-current h-[2px] rounded-full transition-all duration-300 ease-out absolute inset-x-0",
+                mobileMenuOpen ? "w-6 -rotate-45" : "w-6 translate-y-2"
+              )}
+            ></span>
+          </div>
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 w-full bg-white text-slate-900 shadow-lg border-t border-slate-100 flex flex-col pt-2 pb-6 px-4 gap-4">
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={cn(
-                "py-2 font-medium border-b border-slate-100",
-                location.pathname === link.path ? "text-accent1 font-bold" : ""
-              )}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <a
-            href="#quote"
-            className="mt-2 text-center py-3 w-full bg-primary text-white font-semibold rounded-md shadow-sm"
-            onClick={() => setMobileMenuOpen(false)}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="lg:hidden absolute top-full left-0 w-full bg-primary/95 backdrop-blur-xl text-white shadow-2xl border-t border-white/10 overflow-hidden"
           >
-            Get Free Quote
-          </a>
-        </div>
-      )}
+            <div className="flex flex-col p-6 gap-2">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                >
+                  <Link
+                    to={link.path}
+                    className={cn(
+                      "block py-3 text-lg font-medium transition-all duration-300 hover:translate-x-2",
+                      location.pathname === link.path ? "text-accent1 font-bold" : "text-slate-300"
+                    )}
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.name}
+                  </Link>
+                </motion.div>
+              ))}
+              
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: navLinks.length * 0.1 }}
+                className="mt-6 pt-6 border-t border-white/10"
+              >
+                <a
+                  href="#quote"
+                  className="block w-full text-center py-4 bg-accent1 hover:bg-accent2 text-primary font-bold rounded-xl shadow-[0_0_20px_rgba(255,165,0,0.3)] transition-all duration-300"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Get Free Quote
+                </a>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
