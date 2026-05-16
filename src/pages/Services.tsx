@@ -16,15 +16,15 @@ import {
 import { cn } from "@/src/lib/utils";
 
 const images = {
-  lighting1: "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?q=80&w=800&auto=format&fit=crop",
+  lighting1: "/src/assets/images/lighting_solution.png",
   lighting2: "https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?q=80&w=800&auto=format&fit=crop",
-  wiring1: "https://images.unsplash.com/photo-1613665813446-82a78c468a1d?q=80&w=800&auto=format&fit=crop",
+  wiring1: "/src/assets/images/housing_solution.png",
   wiring2: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=800&auto=format&fit=crop",
-  commercial1: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop",
+  commercial1: "/src/assets/images/commercial_works.png",
   commercial2: "https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=800&auto=format&fit=crop",
-  newbuilds1: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=800&auto=format&fit=crop",
+  newbuilds1: "/src/assets/images/new_builds.png",
   newbuilds2: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop",
-  switchboards1: "https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?q=80&w=800&auto=format&fit=crop",
+  switchboards1: "/src/assets/images/switchboards.png",
   switchboards2: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop",
   heatpump1: "https://images.unsplash.com/photo-1583344669865-1d02d04a60db?q=80&w=800&auto=format&fit=crop",
   heatpump2: "https://images.unsplash.com/photo-1510526017260-2ff839ea7c16?q=80&w=800&auto=format&fit=crop",
@@ -51,7 +51,7 @@ const services = [
       "Smart Lighting Systems",
       "Energy Efficient Solutions"
     ],
-    images: [images.lighting1, images.lighting2],
+    image: images.lighting1,
     reverse: false,
   },
   {
@@ -66,7 +66,7 @@ const services = [
       "Power Points & Switches",
       "Fault Finding & Repairs"
     ],
-    images: [images.wiring1, images.wiring2],
+    image: images.wiring1,
     reverse: true,
   },
   {
@@ -81,7 +81,7 @@ const services = [
       "Emergency Lighting",
       "3-Phase Power Solutions"
     ],
-    images: [images.commercial1, images.commercial2],
+    image: images.commercial1,
     reverse: false,
   },
   {
@@ -96,7 +96,7 @@ const services = [
       "Modern Power Distribution",
       "Final Code of Compliance"
     ],
-    images: [images.newbuilds1, images.newbuilds2],
+    image: images.newbuilds1,
     reverse: true,
   },
   {
@@ -111,7 +111,7 @@ const services = [
       "Smart Meter Wiring",
       "Fault Finding & Upgrades"
     ],
-    images: [images.switchboards1, images.switchboards2],
+    image: images.switchboards1,
     reverse: false,
   },
   {
@@ -126,7 +126,7 @@ const services = [
       "Humidity & Air Quality Control",
       "Maintenance & Servicing"
     ],
-    images: [images.heatpump1, images.heatpump2],
+    image: images.heatpump1,
     reverse: true,
   },
   {
@@ -141,7 +141,7 @@ const services = [
       "Access Control",
       "Maintenance & Support"
     ],
-    images: [images.cctv1, images.cctv2],
+    image: images.cctv1,
     reverse: false,
   },
   {
@@ -156,7 +156,7 @@ const services = [
       "Thermal Imaging",
       "Detailed Safety Reports"
     ],
-    images: [images.safety1, images.safety2],
+    image: images.safety1,
     reverse: true,
   },
   {
@@ -171,7 +171,7 @@ const services = [
       "Load Management Solutions",
       "Expert Advice & Support"
     ],
-    images: [images.ev1, images.ev2],
+    image: images.ev1,
     reverse: false,
   },
   {
@@ -186,7 +186,7 @@ const services = [
       "Scheduled Maintenance Plans",
       "NZS 3760 Compliance"
     ],
-    images: [images.testtag1, images.testtag2],
+    image: images.testtag1,
     reverse: true,
   }
 ];
@@ -237,7 +237,7 @@ export function Services() {
               service.reverse ? "lg:flex-row-reverse" : ""
             )}>
               {/* Content Side */}
-              <div className="lg:w-1/2 flex flex-col justify-center">
+              <div className="lg:w-5/12 flex flex-col justify-center">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-primary rounded-xl shadow-lg">
                     {service.icon}
@@ -263,41 +263,29 @@ export function Services() {
               </div>
 
               {/* Images Side */}
-              <div className="lg:w-1/2 grid grid-cols-2 gap-4 auto-rows-fr">
+              <div className="lg:w-7/12 flex items-center justify-center w-full mt-8 lg:mt-0">
                 <motion.div 
                   initial={{ opacity: 0, x: service.reverse ? 30 : -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: 0.2 }}
-                  className="relative rounded-2xl overflow-hidden shadow-lg h-64 lg:h-full mt-8"
+                  className="relative rounded-3xl overflow-hidden shadow-2xl w-full group bg-slate-100"
                 >
                   <img 
-                    src={service.images[0]} 
+                    src={service.image} 
                     alt={`${service.title} in Auckland NZ`} 
-                    className="absolute inset-0 w-full h-full object-cover"
+                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-primary/10 hover:bg-transparent transition-colors duration-300" />
-                </motion.div>
-                
-                <motion.div 
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: 0.4 }}
-                  className="relative rounded-2xl overflow-hidden shadow-lg h-64 lg:h-full mb-8"
-                >
-                  <img 
-                    src={service.images[1]} 
-                    alt={`Professional ${service.title} service`} 
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-primary/10 hover:bg-transparent transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500" />
+                  
+                  {/* Decorative element */}
+                  <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-accent1 rounded-full blur-2xl opacity-40 group-hover:opacity-70 transition-opacity duration-500"></div>
                 </motion.div>
               </div>
 
               {/* Subtle Divider between sections, except after the last one */}
               {index !== services.length - 1 && (
-                 <div className="absolute bottom-0 left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-slate-200 to-transparent"></div>
+                 <div className="absolute bottom-0 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-transparent via-accent1 to-transparent opacity-80"></div>
               )}
             </div>
           </motion.section>
