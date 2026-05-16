@@ -17,7 +17,7 @@ import {
   Briefcase,
   ChevronDown
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/src/lib/utils";
 import aboutImage from "@/src/assets/images/regenerated_image_1778497863953.png";
 
@@ -28,14 +28,14 @@ function Hero() {
     <section className="relative min-h-[90vh] flex items-center pt-24 pb-32">
       {/* Background Image with Overlay */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=2069&auto=format&fit=crop')`, 
+          backgroundImage: `url('/src/assets/images/home_back.jpg')`, 
           backgroundPosition: 'center 30%'
         }}
       >
-        <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/80 via-primary/60 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -56,16 +56,16 @@ function Hero() {
             </h1>
             
             <p className="font-sans text-lg md:text-xl text-slate-200 mb-8 max-w-xl leading-relaxed">
-              Professional, Safe, and Affordable electrical solutions across the City of Sails. From residential wiring to commercial fit-outs, we've got you covered.
+              Professional, Safe, and Affordable electrical solutions across the City of Sails. From residential wiring to commercial fit outs, we've got you covered.
             </p>
             
             <div className="flex flex-wrap gap-4 relative z-50">
-              <a 
-                href="#quote"
+              <Link 
+                to="/contact"
                 className="px-8 py-4 bg-accent1 hover:bg-accent2 text-primary font-bold rounded-md shadow-lg transition-transform transform hover:-translate-y-1"
               >
                 Get a Free Quote
-              </a>
+              </Link>
               <Link 
                 to="/services"
                 className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-md backdrop-blur-sm transition-colors border border-white/20"
@@ -110,9 +110,9 @@ function Hero() {
               </div>
 
               <div className="mt-5 border-t border-slate-100 pt-5">
-                <a href="#quote" className="block w-full text-center bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 text-sm">
+                <Link to="/contact" className="block w-full text-center bg-primary hover:bg-secondary text-white font-bold py-3 px-4 rounded-lg transition-colors duration-300 text-sm">
                   Get a Free Quote
-                </a>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -176,17 +176,17 @@ function About() {
             </h3>
             
             <p className="font-sans text-slate-600 leading-relaxed text-lg pt-4">
-              PLUG & POWER ELECTRICAL LTD provides professional and reliable electrical services for residential, commercial, and office spaces. With skilled Auckland-based electricians and high-quality workmanship, we focus on safety, efficiency, and complete customer satisfaction on every project.
+              PLUG & POWER ELECTRICAL LTD provides professional and reliable electrical services for residential, commercial, and office spaces. With skilled Auckland based electricians and high quality workmanship, we focus on safety, efficiency, and complete customer satisfaction on every project.
             </p>
             <p className="font-sans text-slate-600 leading-relaxed text-lg pb-6">
-               Whether you need a quick repair at your home, a comprehensive switchboard upgrade, or a complete commercial fit-out, our local sparkies are here to power your needs out to industry-certified standards.
+               Whether you need a quick repair at your home, a comprehensive switchboard upgrade, or a complete commercial fit out, our local sparkies are here to power your needs out to industry certified standards.
             </p>
 
             <ul className="space-y-4">
               {[
                 "Work carried out to strict NZ Master Electrician standards.",
-                "Full project support—from design to installation & testing.",
-                "Clean, jargon-free quotes with no hidden costs."
+                "Full project support from design to installation & testing.",
+                "Clean, jargon free quotes with no hidden costs."
               ].map((item, idx) => (
                 <li key={idx} className="flex items-start gap-3">
                   <CheckCircle2 className="h-6 w-6 text-accent1 shrink-0" />
@@ -232,10 +232,10 @@ function About() {
 function Services() {
   const servicesList = [
     { icon: <HomeIcon className="h-8 w-8" />, title: "House Wiring", desc: "Complete wiring and rewiring for Auckland homes with minimal disruption." },
-    { icon: <Building2 className="h-8 w-8" />, title: "Commercial Works", desc: "Reliable maintenance and fit-outs for offices and commercial spaces." },
+    { icon: <Building2 className="h-8 w-8" />, title: "Commercial Works", desc: "Reliable maintenance and fit outs for offices and commercial spaces." },
     { icon: <Wrench className="h-8 w-8" />, title: "New Builds", desc: "Tailored electrical solutions for residential new building projects." },
     { icon: <Zap className="h-8 w-8" />, title: "Switchboards", desc: "Modern switchboard upgrades to handle today's electrical loads safely." },
-    { icon: <ThermometerSnowflake className="h-8 w-8" />, title: "Heat Pumps", desc: "Energy-efficient heat pump and ventilation installation." },
+    { icon: <ThermometerSnowflake className="h-8 w-8" />, title: "Heat Pumps", desc: "Energy efficient heat pump and ventilation installation." },
     { icon: <Video className="h-8 w-8" />, title: "CCTV & Alarms", desc: "Security alarm systems and CCTV installation to protect your property." },
     { icon: <ShieldCheck className="h-8 w-8" />, title: "Safety Inspections", desc: "Comprehensive continuous electrical safety inspections for peace of mind." },
     { icon: <BatteryCharging className="h-8 w-8" />, title: "EV Chargers", desc: "Home and commercial electric vehicle charging system installations." },
@@ -256,7 +256,7 @@ function Services() {
               Our Electrical Services
             </h3>
             <p className="font-sans text-slate-600 text-lg">
-              From residential homes to commercial spaces, PLUG & POWER is here to power your needs—day or night.
+              From residential homes to commercial spaces, PLUG & POWER is here to power your needs day or night.
             </p>
           </motion.div>
         </div>
@@ -269,17 +269,21 @@ function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
-              className="bg-slate-50 rounded-xl p-8 border border-slate-100 hover:border-accent1 hover:shadow-xl transition-all duration-300 group"
             >
-              <div className="h-16 w-16 bg-white rounded-lg shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-accent1 transition-colors mb-6">
-                {svc.icon}
-              </div>
-              <h4 className="font-serif text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">{svc.title}</h4>
-              <p className="font-sans text-slate-600 mb-6 leading-relaxed">
-                {svc.desc}
-              </p>
-              <Link to="/services" className="inline-flex items-center text-sm font-bold text-primary hover:text-accent1 transition-colors gap-1 group/link">
-                Learn more <span className="transform group-hover/link:translate-x-1 transition-transform">→</span>
+              <Link 
+                to="/services" 
+                className="block h-full bg-slate-50 rounded-xl p-8 border border-slate-100 hover:border-accent1 hover:shadow-xl transition-all duration-300 group cursor-pointer"
+              >
+                <div className="h-16 w-16 bg-white rounded-lg shadow-sm flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-accent1 transition-colors mb-6">
+                  {svc.icon}
+                </div>
+                <h4 className="font-serif text-2xl font-bold text-primary mb-4 group-hover:text-secondary transition-colors">{svc.title}</h4>
+                <p className="font-sans text-slate-600 mb-6 leading-relaxed">
+                  {svc.desc}
+                </p>
+                <span className="inline-flex items-center text-sm font-bold text-primary group-hover:text-accent1 transition-colors gap-1 group/link">
+                  Learn more <span className="transform group-hover/link:translate-x-1 transition-transform">→</span>
+                </span>
               </Link>
             </motion.div>
           ))}
@@ -313,7 +317,7 @@ function WhyChooseUs() {
               Peace of mind. Guaranteed.
             </h3>
             <p className="font-sans text-slate-600 text-lg mb-8">
-              We don't just provide services—we provide peace of mind. From thorough inspections to complex commercial installations, we make sure your property is safe and powered.
+              We don't just provide services, we provide peace of mind. From thorough inspections to complex commercial installations, we make sure your property is safe and powered.
             </p>
             <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white font-semibold rounded-md hover:bg-secondary transition-colors shadow-lg">
               Book a Sparky Now
@@ -349,9 +353,9 @@ function WhyChooseUs() {
 
 function Testimonials() {
   const reviews = [
-    { name: "Sarah from Ponsonby", quote: "Plug & Power rewired our old villa completely. They were on time, incredibly tidy, and explained everything clearly. Highly recommend these guys for any residential work!", rating: 5 },
-    { name: "Mike from North Shore", quote: "Had an emergency power outage at our retail store. The team replied instantly and had us back running smoothly within hours. Fantastic service and very fair pricing.", rating: 5 },
-    { name: "David from Mt Eden", quote: "Got them in for complete switchboard upgrades and heat pump installation. The sparkies were absolute legends, hard-working and professional. 10/10.", rating: 5 },
+    { name: "Sarah", quote: "Plug & Power rewired our old villa completely. They were on time, incredibly tidy, and explained everything clearly. Highly recommend these guys for any residential work!", rating: 5 },
+    { name: "Mike", quote: "Had an emergency power outage at our retail store. The team replied instantly and had us back running smoothly within hours. Fantastic service and very fair pricing.", rating: 5 },
+    { name: "David", quote: "Got them in for complete switchboard upgrades and heat pump installation. The sparkies were absolute legends, hard-working and professional. 10/10.", rating: 5 },
   ];
 
   return (
@@ -414,7 +418,7 @@ function FAQ() {
   const faqs = [
     { q: "Do you service all areas of Auckland?", a: "Yes, we are proudly Auckland-wide. From Rodney to Franklin, our local sparkies can travel to your residential or commercial property." },
     { q: "Are your electricians licensed and insured?", a: "Absolutely. All our electricians are fully licensed, registered with the EWRB, and our company holds comprehensive public liability insurance." },
-    { q: "How much does it cost to get a quote?", a: "We offer completely free, no-obligation quotes for most jobs such as rewiring, new builds, and commercial fit-outs." },
+    { q: "How much does it cost to get a quote?", a: "We offer completely free, no obligation quotes for most jobs such as rewiring, new builds, and commercial fit outs." },
     { q: "Do you handle emergency electrical issues?", a: "Yes, we offer 24/7 emergency services. If you have a dangerous fault or total power loss, call us immediately and we'll dispatch a technician." },
     { q: "Can you provide Master Electrician guarantees?", a: "We work to the highest Master Electricians standards, ensuring your work is guaranteed, safe, and fully compliant with New Zealand electrical codes." }
   ];
@@ -493,14 +497,14 @@ function CTASection() {
               Ready to Get Started?
             </h2>
             <p className="font-sans text-xl text-slate-300 mb-10 max-w-2xl mx-auto font-light">
-              Get a free, no-obligation quote for your electrical project. Our experienced local Auckland team is ready to power up your vision.
+              Get a free, no obligation quote for your electrical project. Our experienced local Auckland team is ready to power up your vision.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-               <button className="w-full sm:w-auto px-8 py-4 bg-accent1 hover:bg-accent2 text-primary font-bold rounded-md shadow-lg transition-transform transform hover:-translate-y-1 text-lg">
+               <Link to="/contact" className="w-full sm:w-auto px-8 py-4 bg-accent1 hover:bg-accent2 text-primary text-center font-bold rounded-md shadow-lg transition-transform transform hover:-translate-y-1 text-lg inline-block cursor-pointer">
                  Request a Free Quote
-               </button>
-               <a href="tel:09-123-4567" className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-md backdrop-blur-sm transition-colors text-lg flex items-center justify-center gap-2">
-                 Call 09-123-4567
+               </Link>
+               <a href="tel:0226772115" className="w-full sm:w-auto px-8 py-4 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold rounded-md backdrop-blur-sm transition-colors text-lg flex items-center justify-center gap-2">
+                 Call 022 677 2115
                </a>
             </div>
           </motion.div>

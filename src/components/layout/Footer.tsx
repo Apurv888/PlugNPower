@@ -41,7 +41,7 @@ export function Footer() {
             <ul className="space-y-3 font-sans text-slate-300">
               <li><Link to="/services" className="hover:text-accent2 transition-colors">House Wiring</Link></li>
               <li><Link to="/services" className="hover:text-accent2 transition-colors">Switchboard Upgrades</Link></li>
-              <li><Link to="/services" className="hover:text-accent2 transition-colors">Commercial Fit-outs</Link></li>
+              <li><Link to="/services" className="hover:text-accent2 transition-colors">Commercial Fit outs</Link></li>
               <li><Link to="/services" className="hover:text-accent2 transition-colors">EV Charger Installation</Link></li>
               <li><Link to="/services" className="hover:text-accent2 transition-colors">Heat Pump Solutions</Link></li>
             </ul>

@@ -6,10 +6,12 @@ import { ComingSoon } from "./pages/ComingSoon";
 import { Contact } from "./pages/Contact";
 import { About } from "./pages/About";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { DynamicFavicon } from "./components/DynamicFavicon";
 
 export default function App() {
   return (
     <>
+      <DynamicFavicon />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>

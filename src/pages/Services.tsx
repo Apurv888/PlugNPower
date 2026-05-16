@@ -17,25 +17,15 @@ import { cn } from "@/src/lib/utils";
 
 const images = {
   lighting1: "/src/assets/images/lighting_solution.png",
-  lighting2: "https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?q=80&w=800&auto=format&fit=crop",
   wiring1: "/src/assets/images/housing_solution.png",
-  wiring2: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=800&auto=format&fit=crop",
   commercial1: "/src/assets/images/commercial_works.png",
-  commercial2: "https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=800&auto=format&fit=crop",
   newbuilds1: "/src/assets/images/new_builds.png",
-  newbuilds2: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=800&auto=format&fit=crop",
   switchboards1: "/src/assets/images/switchboards.png",
-  switchboards2: "https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop",
-  heatpump1: "https://images.unsplash.com/photo-1583344669865-1d02d04a60db?q=80&w=800&auto=format&fit=crop",
-  heatpump2: "https://images.unsplash.com/photo-1510526017260-2ff839ea7c16?q=80&w=800&auto=format&fit=crop",
-  cctv1: "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=800&auto=format&fit=crop",
-  cctv2: "https://images.unsplash.com/photo-1584033320272-358fd9280d44?q=80&w=800&auto=format&fit=crop",
-  safety1: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=800&auto=format&fit=crop",
-  safety2: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?q=80&w=800&auto=format&fit=crop",
-  ev1: "https://images.unsplash.com/photo-1593941707882-a5bba14938cb?q=80&w=800&auto=format&fit=crop",
-  ev2: "https://images.unsplash.com/photo-1575084920251-4d4af2a1ebcb?q=80&w=800&auto=format&fit=crop",
-  testtag1: "https://images.unsplash.com/photo-1558449028-b53a39d100fc?q=80&w=800&auto=format&fit=crop",
-  testtag2: "https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?q=80&w=800&auto=format&fit=crop",
+  heatpump1: "/src/assets/images/heatpump.png",
+  cctv1: "/src/assets/images/cctv.png",
+  safety1: "/src/assets/images/safety_inspection.png",
+  ev1: "/src/assets/images/ev_chargers.png",
+  testtag1: "/src/assets/images/test.png",
 };
 
 const services = [
@@ -43,7 +33,7 @@ const services = [
     id: "lighting",
     title: "1. Lighting Solution",
     icon: <Lightbulb className="h-10 w-10 text-accent1" />,
-    description: "Enhance the look, feel and functionality of your space with our professional lighting solutions. Whether you're renovating a historic villa in Ponsonby or building a modern home in Albany, our expert Auckland electricians provide tailored lighting designs to meet your needs. We focus on energy-efficient lighting that meets strict NZ standards, ensuring a beautiful, safely lit environment.",
+    description: "Enhance the look, feel and functionality of your space with our professional lighting solutions. Whether you're renovating a historic villa in Ponsonby or building a modern home in Albany, our expert Auckland electricians provide tailored lighting designs to meet your needs. We focus on energy efficient lighting that meets strict NZ standards, ensuring a beautiful, safely lit environment.",
     features: [
       "LED Downlights",
       "Feature & Pendant Lighting",
@@ -73,9 +63,9 @@ const services = [
     id: "commercial",
     title: "3. Commercial Works",
     icon: <Building2 className="h-10 w-10 text-accent1" />,
-    description: "Reliable maintenance and fit-outs for offices, retail stores, and commercial spaces. Our team understands that downtime costs money, which is why we offer fast, professional electrical services scaled to your business needs, completing heavy-duty installations safely across New Zealand.",
+    description: "Reliable maintenance and fit outs for offices, retail stores, and commercial spaces. Our team understands that downtime costs money, which is why we offer fast, professional electrical services scaled to your business needs, completing heavy duty installations safely across New Zealand.",
     features: [
-      "Office Fit-outs",
+      "Office Fit outs",
       "Retail Lighting & Power",
       "Data & Communications",
       "Emergency Lighting",
@@ -163,7 +153,7 @@ const services = [
     id: "ev-charger",
     title: "9. EV Chargers",
     icon: <BatteryCharging className="h-10 w-10 text-accent1" />,
-    description: "Power your drive the easy way with a professional EV charger installation. With the rise of electric vehicles across NZ, having a reliable home or business charging station is essential. We offer fast, safe, and load-managed EV charging solutions tailored to all makes and models.",
+    description: "Power your drive the easy way with a professional EV charger installation. With the rise of electric vehicles across NZ, having a reliable home or business charging station is essential. We offer fast, safe, and load managed EV charging solutions tailored to all makes and models.",
     features: [
       "Home EV Charger Installation",
       "Commercial Charging Stations",
@@ -198,9 +188,9 @@ export function Services() {
       {/* Page Header */}
       <section className="relative text-white pt-32 pb-24 px-4 md:px-6 mb-16 overflow-hidden">
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{ 
-            backgroundImage: `url('/src/assets/images/service_banner.png')`, 
+            backgroundImage: `url('/src/assets/images/service_back.jpg')`, 
           }}
         >
           <div className="absolute inset-0 bg-primary/85 mix-blend-multiply"></div>
@@ -212,7 +202,7 @@ export function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6">Complete Electrical Solutions</h1>
+            <h1 className="font-serif text-5xl md:text-6xl font-bold mb-6">Our Services</h1>
             <p className="font-sans text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
               Plug & Power Electrical provides reliable, high-quality electrical services for homes, businesses and commercial properties across Auckland, NZ.
             </p>
@@ -232,12 +222,12 @@ export function Services() {
             transition={{ duration: 0.7 }}
             className="scroll-mt-32"
           >
-            <div className={cn(
-              "flex flex-col lg:flex-row items-stretch gap-10 lg:gap-16 pb-16 relative",
-              service.reverse ? "lg:flex-row-reverse" : ""
-            )}>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center pb-16 relative">
               {/* Content Side */}
-              <div className="lg:w-5/12 flex flex-col justify-center">
+              <div className={cn(
+                "lg:col-span-5 flex flex-col justify-center",
+                service.reverse ? "lg:order-2" : "lg:order-1"
+              )}>
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 bg-primary rounded-xl shadow-lg">
                     {service.icon}
@@ -263,7 +253,10 @@ export function Services() {
               </div>
 
               {/* Images Side */}
-              <div className="lg:w-7/12 flex items-center justify-center w-full mt-8 lg:mt-0">
+              <div className={cn(
+                "lg:col-span-7 flex flex-col justify-center w-full",
+                service.reverse ? "lg:order-1" : "lg:order-2"
+              )}>
                 <motion.div 
                   initial={{ opacity: 0, x: service.reverse ? 30 : -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
@@ -274,7 +267,7 @@ export function Services() {
                   <img 
                     src={service.image} 
                     alt={`${service.title} in Auckland NZ`} 
-                    className="block w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="block w-full aspect-video md:aspect-[4/3] xl:aspect-video object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-primary/5 group-hover:bg-transparent transition-colors duration-500" />
                   

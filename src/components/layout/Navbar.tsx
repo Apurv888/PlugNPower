@@ -54,12 +54,12 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <a
-            href="#quote"
+          <Link
+            to="/contact"
             className="px-6 py-2.5 bg-accent1 hover:bg-accent2 text-slate-900 font-semibold rounded-md shadow-sm transition-colors duration-300 transform hover:-translate-y-0.5"
           >
             Get Free Quote
-          </a>
+          </Link>
         </nav>
 
         {/* Mobile Toggle */}
@@ -128,13 +128,13 @@ export function Navbar() {
                 transition={{ delay: navLinks.length * 0.1 }}
                 className="mt-6 pt-6 border-t border-white/10"
               >
-                <a
-                  href="#quote"
+                <Link
+                  to="/contact"
                   className="block w-full text-center py-4 bg-accent1 hover:bg-accent2 text-primary font-bold rounded-xl shadow-[0_0_20px_rgba(255,165,0,0.3)] transition-all duration-300"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Get Free Quote
-                </a>
+                </Link>
               </motion.div>
             </div>
           </motion.div>

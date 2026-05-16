@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Send, User } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 export function Contact() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
@@ -19,14 +19,15 @@ export function Contact() {
       {/* Page Header */}
       <section className="relative text-white pt-32 pb-24 px-4 md:px-6 mb-16 overflow-hidden">
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{ 
-            backgroundImage: `url('https://images.unsplash.com/photo-1520690214124-2405c5217036?q=80&w=2070&auto=format&fit=crop')`, 
+            backgroundImage: `url('/src/assets/images/contact.jpg')`, 
           }}
         >
-          <div className="absolute inset-0 bg-primary/85 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
         </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-secondary/10 -skew-x-12 opacity-30 transform origin-top hidden md:block z-0" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-accent1/10 -skew-x-12 opacity-30 transform origin-top hidden md:block z-0" />
+        
         <div className="container mx-auto max-w-5xl relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -101,14 +102,7 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Auckland "Map" Image Placeholder */}
-            <div className="rounded-2xl overflow-hidden shadow-md h-48 relative mt-10">
-              <div 
-                className="absolute inset-0 bg-cover bg-center"
-                style={{ backgroundImage: `url('https://images.unsplash.com/photo-1543880509-f31f964092b7?q=80&w=800&auto=format&fit=crop')` }}
-              ></div>
-              <div className="absolute inset-0 bg-primary/20 pointer-events-none"></div>
-            </div>
+
           </motion.div>
 
           {/* Contact Form (Right Side) */}

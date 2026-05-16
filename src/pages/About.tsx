@@ -22,7 +22,7 @@ export function About() {
     {
       icon: <Zap className="w-10 h-10" />,
       title: "Innovation & Efficiency",
-      desc: "We stay updated with the latest electrical technologies to provide energy-efficient and modern solutions."
+      desc: "We stay updated with the latest electrical technologies to provide energy efficient and modern solutions."
     },
     {
       icon: <BadgeDollarSign className="w-10 h-10" />,
@@ -42,14 +42,15 @@ export function About() {
       {/* Page Header */}
       <section className="relative text-white pt-32 pb-24 px-4 md:px-6 mb-16 overflow-hidden">
         <div 
-          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{ 
-            backgroundImage: `url('https://images.unsplash.com/photo-1542013936693-884638332954?q=80&w=2069&auto=format&fit=crop')`, 
+            backgroundImage: `url('/src/assets/images/aboutus.jpg')`, 
           }}
         >
-          <div className="absolute inset-0 bg-primary/85 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
         </div>
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-secondary/10 -skew-x-12 opacity-30 transform origin-top hidden md:block z-0" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-accent1/10 -skew-x-12 opacity-30 transform origin-top hidden md:block z-0" />
+        
         <div className="container mx-auto max-w-5xl relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -79,10 +80,10 @@ export function About() {
               Leading the Charge in Auckland's Electrical Services
             </h3>
             <p className="font-sans text-slate-600 leading-relaxed text-lg">
-              Founded by <span className="font-bold text-slate-800">Ashish Patel</span> and <span className="font-bold text-slate-800">Ravi Patel</span>, Plug & Power Electrical was built on a simple premise: to provide Auckland residents and businesses with honest, high-quality electrical work that stands the test of time.
+              Founded by <span className="font-bold text-slate-800">Ashish Patel</span> and <span className="font-bold text-slate-800">Ravi Patel</span>, Plug & Power Electrical was built on a simple premise: to provide Auckland residents and businesses with honest, high quality electrical work that stands the test of time.
             </p>
             <p className="font-sans text-slate-600 leading-relaxed text-lg">
-              What started as a small team tackling residential wiring has grown into a structured operation equipped for large commercial fit-outs, new builds, and comprehensive smart home upgrades. Despite our growth, we remain true to our local roots—prioritizing personal relationships, clear communication, and meticulous attention to detail.
+              What started as a small team tackling residential wiring has grown into a structured operation equipped for large commercial fit outs, new builds, and comprehensive smart home upgrades. Despite our growth, we remain true to our local roots, prioritizing personal relationships, clear communication, and meticulous attention to detail.
             </p>
             <div className="pt-4 space-y-3">
               <div className="flex items-center gap-3 text-slate-700 font-medium">
@@ -106,7 +107,7 @@ export function About() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] md:aspect-square lg:aspect-[4/5]">
               <img 
-                src="/src/assets/images/regenerated_image_1778772949039.png" 
+                src="/src/assets/images/about_img.png" 
                 alt="Electricians working on a project" 
                 className="w-full h-full object-cover"
               />
