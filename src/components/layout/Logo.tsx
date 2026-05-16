@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import logoUrl from '../../assets/images/logo.png';
+
+const logoUrl = '/images/logo.png';
 
 interface LogoProps {
   className?: string;

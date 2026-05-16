@@ -19,7 +19,6 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/src/lib/utils";
-import aboutImage from "@/src/assets/images/regenerated_image_1778497863953.png";
 
 // --- Sections ---
 
@@ -30,7 +29,7 @@ function Hero() {
       <div 
         className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
         style={{ 
-          backgroundImage: `url('/src/assets/images/home_back.jpg')`, 
+          backgroundImage: `url('/images/home_back.jpg')`, 
           backgroundPosition: 'center 30%'
         }}
       >
@@ -210,7 +209,7 @@ function About() {
             className="relative mt-8 lg:mt-0"
           >
             <img 
-              src={aboutImage} 
+              src="/images/regenerated_image_1778497863953.png" 
               alt="Experienced Auckland Electrician" 
               className="relative rounded-2xl shadow-2xl object-cover h-[400px] sm:h-[500px] w-full"
             />

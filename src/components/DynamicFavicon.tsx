@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import logoUrl from "../assets/images/logo.png";
+
+const logoUrl = "/images/logo.png";
 
 export function DynamicFavicon() {
   useEffect(() => {

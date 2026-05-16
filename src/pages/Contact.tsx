@@ -21,7 +21,7 @@ export function Contact() {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{ 
-            backgroundImage: `url('/src/assets/images/contact.jpg')`, 
+            backgroundImage: `url('/images/contact.jpg')`, 
           }}
         >
           <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>

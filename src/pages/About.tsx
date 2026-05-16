@@ -44,7 +44,7 @@ export function About() {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{ 
-            backgroundImage: `url('/src/assets/images/aboutus.jpg')`, 
+            backgroundImage: `url('/images/aboutus.jpg')`, 
           }}
         >
           <div className="absolute inset-0 bg-primary/80 mix-blend-multiply"></div>
@@ -107,7 +107,7 @@ export function About() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] md:aspect-square lg:aspect-[4/5]">
               <img 
-                src="/src/assets/images/about_img.png" 
+                src="/images/about_img.png" 
                 alt="Electricians working on a project" 
                 className="w-full h-full object-cover"
               />
@@ -154,7 +154,7 @@ export function About() {
                 whileHover={{ y: -10, boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.1)" }}
                 className="bg-slate-50 hover:bg-white relative overflow-hidden rounded-2xl p-8 border border-slate-200 hover:border-transparent group z-0 transition-all duration-300"
               >
-                {/* Background Shapes */}
+                {/* Backsround Shapes */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent1/5 rounded-bl-full -z-10 group-hover:scale-[2] transition-transform duration-700 ease-in-out"></div>
                 <div className="absolute bottom-0 left-0 w-32 h-32 bg-accent2/5 rounded-tr-full -z-10 group-hover:scale-[2] transition-transform duration-700 ease-in-out"></div>
                 

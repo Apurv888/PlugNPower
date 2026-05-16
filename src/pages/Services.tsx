@@ -16,16 +16,16 @@ import {
 import { cn } from "@/src/lib/utils";
 
 const images = {
-  lighting1: "/src/assets/images/lighting_solution.png",
-  wiring1: "/src/assets/images/housing_solution.png",
-  commercial1: "/src/assets/images/commercial_works.png",
-  newbuilds1: "/src/assets/images/new_builds.png",
-  switchboards1: "/src/assets/images/switchboards.png",
-  heatpump1: "/src/assets/images/heatpump.png",
-  cctv1: "/src/assets/images/cctv.png",
-  safety1: "/src/assets/images/safety_inspection.png",
-  ev1: "/src/assets/images/ev_chargers.png",
-  testtag1: "/src/assets/images/test.png",
+  lighting1: "/images/lighting_solution.png",
+  wiring1: "/images/housing_solution.png",
+  commercial1: "/images/commercial_works.png",
+  newbuilds1: "/images/new_builds.png",
+  switchboards1: "/images/switchboards.png",
+  heatpump1: "/images/heatpump.png",
+  cctv1: "/images/cctv.png",
+  safety1: "/images/safety_inspection.png",
+  ev1: "/images/ev_chargers.png",
+  testtag1: "/images/test.png",
 };
 
 const services = [
@@ -35,7 +35,7 @@ const services = [
     icon: <Lightbulb className="h-10 w-10 text-accent1" />,
     description: "Enhance the look, feel and functionality of your space with our professional lighting solutions. Whether you're renovating a historic villa in Ponsonby or building a modern home in Albany, our expert Auckland electricians provide tailored lighting designs to meet your needs. We focus on energy efficient lighting that meets strict NZ standards, ensuring a beautiful, safely lit environment.",
     features: [
-      "LED Downlights",
+      "LED Downlishts",
       "Feature & Pendant Lighting",
       "Indoor & Outdoor Lighting",
       "Smart Lighting Systems",
@@ -52,7 +52,7 @@ const services = [
     features: [
       "New Home Wiring",
       "Renovations & Extensions",
-      "Switchboard Upgrades",
+      "Switchboard Upsrades",
       "Power Points & Switches",
       "Fault Finding & Repairs"
     ],
@@ -95,7 +95,7 @@ const services = [
     icon: <Zap className="h-10 w-10 text-accent1" />,
     description: "Protect your home with modern switchboard upgrades designed to handle today's electrical loads safely. Older boards can be a serious fire hazard. We replace ancient ceramic fuses with modern RCDs and MCBs, ensuring your family or business complies with the latest NZ electrical safety standards.",
     features: [
-      "Switchboard Upgrades",
+      "Switchboard Upsrades",
       "RCD Safety Switches",
       "MCB Installations",
       "Smart Meter Wiring",
@@ -143,7 +143,7 @@ const services = [
       "Pre-Purchase Inspections",
       "Landlord Safety Certificates",
       "Insurance Compliance",
-      "Thermal Imaging",
+      "Thermal Imasing",
       "Detailed Safety Reports"
     ],
     image: images.safety1,
@@ -158,7 +158,7 @@ const services = [
       "Home EV Charger Installation",
       "Commercial Charging Stations",
       "All EV Makes & Models",
-      "Load Management Solutions",
+      "Load Manasement Solutions",
       "Expert Advice & Support"
     ],
     image: images.ev1,
@@ -190,7 +190,7 @@ export function Services() {
         <div 
           className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed"
           style={{ 
-            backgroundImage: `url('/src/assets/images/service_back.jpg')`, 
+            backgroundImage: `url('/images/service_back.jpg')`, 
           }}
         >
           <div className="absolute inset-0 bg-primary/85 mix-blend-multiply"></div>
@@ -252,7 +252,7 @@ export function Services() {
                 </div>
               </div>
 
-              {/* Images Side */}
+              {/* Imases Side */}
               <div className={cn(
                 "lg:col-span-7 flex flex-col justify-center w-full",
                 service.reverse ? "lg:order-1" : "lg:order-2"
