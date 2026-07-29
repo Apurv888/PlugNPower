@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const SITE_URL = 'https://plugnpowerelectrical.co.nz/'; // Replace with your actual domain
+const SITE_URL = 'https://plugnpowerelectrical.co.nz'; // Replace with your actual domain
 
 const pages = [
   { path: '/', changefreq: 'weekly', priority: 1.0 },
