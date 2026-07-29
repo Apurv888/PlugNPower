@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import { Layout } from "./components/layout/Layout";
 import { Home } from "./pages/Home";
 import { Services } from "./pages/Services";
-import { ComingSoon } from "./pages/ComingSoon";
+import { NotFound } from "./pages/NotFound";
 import { Contact } from "./pages/Contact";
 import { About } from "./pages/About";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -19,7 +19,7 @@ export default function App() {
           <Route path="services" element={<Services />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<ComingSoon />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </>
