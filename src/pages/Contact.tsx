@@ -128,7 +128,7 @@ export function Contact() {
                   <p>Thanks for reaching out. A member of our team will get back to you shortly.</p>
                   <button 
                     onClick={() => setFormStatus("idle")}
-                    className="mt-6 text-green-600 font-medium hover:text-green-800 underline"
+                    className="mt-6 cursor-pointer text-green-600 font-medium hover:text-green-800 underline"
                   >
                     Send another message
                   </button>
@@ -219,7 +219,7 @@ export function Contact() {
                   <button 
                     type="submit" 
                     disabled={formStatus === "submitting"}
-                    className="w-full md:w-auto px-8 py-4 bg-primary hover:bg-slate-800 text-white font-bold rounded-lg shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full md:w-auto px-8 py-4 bg-primary hover:bg-slate-800 text-white font-bold rounded-lg shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {formStatus === "submitting" ? (
                       <>

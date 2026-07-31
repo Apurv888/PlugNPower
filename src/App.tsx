@@ -11,7 +11,6 @@ import { DynamicFavicon } from "./components/DynamicFavicon";
 export default function App() {
   return (
     <>
-      <DynamicFavicon />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>

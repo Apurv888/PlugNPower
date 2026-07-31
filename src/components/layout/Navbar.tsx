@@ -64,7 +64,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="lg:hidden p-2 relative w-10 h-10 flex items-center justify-center focus:outline-none text-current"
+          className="lg:hidden cursor-pointer p-2 relative w-10 h-10 flex items-center justify-center focus:outline-none text-current"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >

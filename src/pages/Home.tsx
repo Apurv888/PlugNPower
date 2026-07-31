@@ -47,15 +47,15 @@ function Hero() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent1/20 text-accent2 border border-accent1/30 rounded-full mb-6 font-sans text-sm font-medium">
               <Zap className="h-4 w-4" />
-              <span>Master Electricians Auckland</span>
+              <span>Trusted Auckland Electricians</span>
             </div>
             
             <h1 className="font-serif text-5xl md:text-6xl xl:text-7xl font-bold text-white leading-tight mb-6">
-              Auckland’s Most Trusted Sparkies: <span className="text-accent1">Powering Your Home & Business.</span>
+              Auckland’s Most Trusted Electricians: <span className="text-accent1">Powering Your Home & Business.</span>
             </h1>
             
             <p className="font-sans text-lg md:text-xl text-slate-200 mb-8 max-w-xl leading-relaxed">
-              Professional, Safe, and Affordable electrical solutions across the City of Sails. From residential wiring to commercial fit outs, we've got you covered.
+              Professional, Safe, and Affordable electrical solutions across Auckland. From residential wiring to commercial fit outs, we've got you covered.
             </p>
             
             <div className="flex flex-wrap gap-4 relative z-50">
@@ -175,15 +175,15 @@ function About() {
             </h3>
             
             <p className="font-sans text-slate-600 leading-relaxed text-lg pt-4">
-              PLUG & POWER ELECTRICAL LTD provides professional and reliable electrical services for residential, commercial, and office spaces. With skilled Auckland based electricians and high quality workmanship, we focus on safety, efficiency, and complete customer satisfaction on every project.
+              <strong className="text-primary font-bold">Plug & Power Electrical Ltd</strong> provides professional and reliable electrical services for residential, commercial, and office spaces. With skilled Auckland based electricians and high quality workmanship, we focus on safety, efficiency, and complete customer satisfaction on every project.
             </p>
             <p className="font-sans text-slate-600 leading-relaxed text-lg pb-6">
-               Whether you need a quick repair at your home, a comprehensive switchboard upgrade, or a complete commercial fit out, our local sparkies are here to power your needs out to industry certified standards.
+               Whether you need a quick repair at your home, a comprehensive switchboard upgrade, or a complete commercial fit out, our local electricians are here to power your needs out to industry certified standards.
             </p>
 
             <ul className="space-y-4">
               {[
-                "Work carried out to strict NZ Master Electrician standards.",
+                "Work carried out safely to the highest industry standards.",
                 "Full project support from design to installation & testing.",
                 "Clean, jargon free quotes with no hidden costs."
               ].map((item, idx) => (
@@ -216,7 +216,7 @@ function About() {
             
             {/* Overlay Badge */}
             <div className="absolute -bottom-6 -left-2 sm:-left-6 bg-primary text-white p-4 sm:p-6 rounded-xl shadow-xl flex items-center gap-4">
-              <div className="text-4xl sm:text-5xl font-serif font-black text-accent1">15+</div>
+              <div className="text-4xl sm:text-5xl font-serif font-black text-accent1">5+</div>
               <div className="font-sans font-bold leading-tight text-sm sm:text-base">
                 Years of <br/> Experience
               </div>
@@ -255,7 +255,7 @@ function Services() {
               Our Electrical Services
             </h3>
             <p className="font-sans text-slate-600 text-lg">
-              From residential homes to commercial spaces, PLUG & POWER is here to power your needs day or night.
+              From residential homes to commercial spaces, we are here to power your needs day or night.
             </p>
           </motion.div>
         </div>
@@ -295,7 +295,7 @@ function Services() {
 function WhyChooseUs() {
   const reasons = [
     { icon: <Award className="h-10 w-10 text-primary" />, title: "Experienced & Qualified", desc: "Our team consists of highly skilled, NZ-rated electricians." },
-    { icon: <ShieldCheck className="h-10 w-10 text-primary" />, title: "Safe & Industry-Standard", desc: "No corners cut. We work to strict Master Electricians standards." },
+    { icon: <ShieldCheck className="h-10 w-10 text-primary" />, title: "Safe & Industry-Standard", desc: "No corners cut. We ensure everything is up to the highest safety codes." },
     { icon: <BadgeDollarSign className="h-10 w-10 text-primary" />, title: "Competitive Pricing", desc: "Affordable, transparent quotes with absolutely no hidden fees." },
     { icon: <Briefcase className="h-10 w-10 text-primary" />, title: "Professional Service", desc: "Fast, reliable, and punctual. We treat your property with respect." },
   ];
@@ -318,8 +318,8 @@ function WhyChooseUs() {
             <p className="font-sans text-slate-600 text-lg mb-8">
               We don't just provide services, we provide peace of mind. From thorough inspections to complex commercial installations, we make sure your property is safe and powered.
             </p>
-            <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white font-semibold rounded-md hover:bg-secondary transition-colors shadow-lg">
-              Book a Sparky Now
+            <Link to="/contact" className="inline-flex items-center justify-center px-8 py-3 bg-primary text-white font-semibold rounded-md hover:bg-secondary transition-colors shadow-lg cursor-pointer">
+              Book an Electrician Now
             </Link>
           </motion.div>
 
@@ -354,7 +354,7 @@ function Testimonials() {
   const reviews = [
     { name: "Sarah", quote: "Plug & Power rewired our old villa completely. They were on time, incredibly tidy, and explained everything clearly. Highly recommend these guys for any residential work!", rating: 5 },
     { name: "Mike", quote: "Had an emergency power outage at our retail store. The team replied instantly and had us back running smoothly within hours. Fantastic service and very fair pricing.", rating: 5 },
-    { name: "David", quote: "Got them in for complete switchboard upgrades and heat pump installation. The sparkies were absolute legends, hard-working and professional. 10/10.", rating: 5 },
+    { name: "David", quote: "Got them in for complete switchboard upgrades and heat pump installation. The electricians were absolute legends, hard-working and professional. 10/10.", rating: 5 },
   ];
 
   return (
@@ -415,11 +415,11 @@ function Testimonials() {
 
 function FAQ() {
   const faqs = [
-    { q: "Do you service all areas of Auckland?", a: "Yes, we are proudly Auckland-wide. From Rodney to Franklin, our local sparkies can travel to your residential or commercial property." },
+    { q: "Do you service all areas of Auckland?", a: "Yes, we are proudly Auckland-wide. From Rodney to Franklin, our local electricians can travel to your residential or commercial property." },
     { q: "Are your electricians licensed and insured?", a: "Absolutely. All our electricians are fully licensed, registered with the EWRB, and our company holds comprehensive public liability insurance." },
     { q: "How much does it cost to get a quote?", a: "We offer completely free, no obligation quotes for most jobs such as rewiring, new builds, and commercial fit outs." },
     { q: "Do you handle emergency electrical issues?", a: "Yes, we offer 24/7 emergency services. If you have a dangerous fault or total power loss, call us immediately and we'll dispatch a technician." },
-    { q: "Can you provide Master Electrician guarantees?", a: "We work to the highest Master Electricians standards, ensuring your work is guaranteed, safe, and fully compliant with New Zealand electrical codes." }
+    { q: "Is your work guaranteed?", a: "We work to the highest industry standards, ensuring your work is guaranteed, safe, and fully compliant with New Zealand electrical codes." }
   ];
 
   const [open, setOpen] = useState<number | null>(0);
@@ -446,7 +446,7 @@ function FAQ() {
             >
               <button 
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full px-6 py-5 flex items-center justify-between focus:outline-none"
+                className="w-full cursor-pointer px-6 py-5 flex items-center justify-between focus:outline-none"
               >
                 <span className="font-serif font-bold text-lg text-primary text-left">{faq.q}</span>
                 <ChevronDown className={cn("h-5 w-5 text-accent1 transition-transform duration-300 shrink-0", open === i ? "transform rotate-180" : "")} />

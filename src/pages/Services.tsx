@@ -48,7 +48,7 @@ const services = [
     id: "house-wiring",
     title: "2. House Wiring",
     icon: <HomeIcon className="h-10 w-10 text-accent1" />,
-    description: "Safe, efficient and compliant electrical wiring for new builds, renovations and upgrades. We are a trusted provider of comprehensive home wiring services across the greater Auckland region. Our Master Electricians handle everything logically, ensuring every Kiwi home is powered reliably and up to current building codes.",
+    description: "Safe, efficient and compliant electrical wiring for new builds, renovations and upgrades. We are a trusted provider of comprehensive home wiring services across the greater Auckland region. Our experienced electricians handle everything logically, ensuring every Kiwi home is powered reliably and up to current building codes.",
     features: [
       "New Home Wiring",
       "Renovations & Extensions",

@@ -12,7 +12,7 @@ export function Footer() {
           <div className="space-y-4">
             <Logo invert={true} />
             <p className="text-slate-300 mt-4 leading-relaxed font-sans text-sm">
-              Auckland's Most Trusted Sparkies. Safe, reliable, and Master Electricians certified for residential and commercial works.
+              Auckland's Most Trusted Electricians. Safe, reliable, and highly qualified for residential and commercial works.
             </p>
             <div className="flex gap-4 pt-2">
               <a href="#" className="h-10 w-10 rounded-full bg-secondary flex items-center justify-center hover:bg-accent1 hover:text-primary transition-colors">
@@ -64,7 +64,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent1 shrink-0 mt-0.5" />
-                <span>123 Sparky Avenue, Penrose<br />Auckland 1061, NZ</span>
+                <span>Penrose<br />Auckland, NZ</span>
               </li>
               <li className="flex items-start gap-3">
                 <Clock className="h-5 w-5 text-accent1 shrink-0 mt-0.5" />
